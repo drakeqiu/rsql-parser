@@ -12,7 +12,7 @@ public class MainApp {
 
         Set<ComparisonOperator> operators = RSQLOperators.defaultOperators();
 
-        Node rootNode = new RSQLParser().parse("creation_time lt 111 and type eq 'iDRAC,Exsi' and state eq 'IN_PROGRESS'");
+        Node rootNode = new RSQLParser().parse("creation_time lt 111 and ( type eq 'iDRAC,Exsi' or state eq 'IN_PROGRESS' )");
 
         FilterVisitorAdapter<Node> visitor = new FilterVisitorAdapter<>();
 
