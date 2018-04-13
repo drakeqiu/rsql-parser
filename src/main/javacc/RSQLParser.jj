@@ -36,9 +36,9 @@ options {
 
 PARSER_BEGIN(Parser)
 
-package cz.jirutka.rsql.parser;
+package com.emc.mystic.uri.parser;
 
-import cz.jirutka.rsql.parser.ast.*;
+import com.emc.mystic.uri.parser.ast.*;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -94,7 +94,7 @@ TOKEN : {
   | < OR         : ( "," | " or " ) >
   | < LPAREN     : "(" >
   | < RPAREN     : ")" >
-  | < COMP_FIQL  : ( ( "=" (<ALPHA>)* ) | "!" ) "=" >
+  | < COMP_FIQL  : (" eq " | " ne " | " gt " | " ge " |" lt " | " le " | " in " | " out " ) >
   | < COMP_ALT   : ( ">" | "<" ) ( "=" )? >
 }
 
